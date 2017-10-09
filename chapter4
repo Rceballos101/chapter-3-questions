@@ -1,0 +1,69 @@
+# chapterQuestions
+#pract prob 4.3
+x = 'John'
+
+y = 'Paul'
+
+z = 'Smith'
+
+print(x,y,z,sep='\t')
+#John    Paul    Smith
+name = [x,y,z]
+for x in name:
+    print(x,end='-')
+    
+# pract prob 4.4
+def even(x):
+   lst = []
+   for num in range(1,x):
+       if num % 2 == 0:
+           lst.append(num)
+       elif num % 3 == 0:
+           lst.append(num)
+   print(lst)
+even(17)
+
+[2, 3, 4, 6, 8, 9, 10, 12, 14, 15, 16]
+
+# pract prob 
+weekday = 'Wednesday'
+month = 'March'
+day = 10
+year = 2010
+hour = 11
+minute = 45
+second = 33
+
+print('{}, {} {}, {} at {}:{}:{} AM'.format(weekday,month,day,year,hour,minute,second))
+Wednesday, March 10, 2010 at 11:45:33 AM
+
+#pract prob 4.5
+first = 'John'
+last = 'Doe'
+street = 'Main Street'
+number = 123
+city = 'AnyCity'
+state = 'AS'
+zipcode = '09876'
+
+print('{} {}\n{} {}\n{}, {} {}'.format(first, last, number, street, city, state, zipcode))
+John Doe
+123 Main Street
+AnyCity, AS 09876
+
+#
+for i in range(12):print('{0:5}{1:5}{2:5}{3:5}'.format(i,i**2,i**3,2**i))
+    0    0    0    1
+    1    1    1    2
+    2    4    8    4
+    3    9   27    8
+    4   16   64   16
+    5   25  125   32
+    6   36  216   64
+    7   49  343  128
+    8   64  512  256
+    9   81  729  512
+   10  100 1000 1024
+   11  121 1331 2048
+   
+   
