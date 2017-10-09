@@ -1,0 +1,213 @@
+# exercise 3.20
+lst = ['January', 'February', 'March']
+
+for month in lst:
+    print(month[0:3])
+
+# exercise 3.21
+lst = [2,3,4,5,6,7,8,9]
+for x in lst:
+   if x%2 == 0:
+        print(x)
+
+# exercise 3.22
+lst = [2,3,4,5,6,7,8,9]
+for x in lst:
+    if x**2 % 8 == 0:
+        print(x)
+        
+# ex 3.23
+for x in range(0,2):
+    print(x)
+   
+for x in range(0,4):
+   if x == 3 or x ==0:
+       print(x)
+#or use this
+for x in range(0,4,3):
+    print(x)
+
+for x in range(5,22,4):
+    print(x)    
+# problems 3.24
+
+lst = ['cia','secret','mi6','isi','secret']
+
+def add():
+    add = str(input('enter a word '))
+    lst.append(add)
+add()
+
+def request(x):
+    if len(lst) < x:
+        add()
+    else:
+        print('list is full')
+        print(lst)
+request(x)
+
+for i in lst:
+    if i != 'secret':
+        print(i)
+        
+# 3.25
+names = ['maria', 'jane', 'alex', 'bob', 'kate', 'dave']
+alphabet = ['a', 'b', 'c', 'd']
+
+for x in names:
+    if x[0] in alphabet[0:2]:
+        print(x)
+        
+# 3.26
+number = [2,5,9,5,6,3]
+print(number[0], number[-1])
+
+# 3.27
+
+def multiple():
+    pos = eval(input('enter a positvie integer '))
+    for x in range(4):
+       mult = pos * x
+       print(mult)
+multiple()
+#3.28
+def squares():
+    integer = eval(input('enter a positive integer '))
+    for x in range(0,integer):
+        square = x**2
+        print(square)
+squares()
+#3.29
+def divisor():
+    lst = []
+    integer = int(input('enter an integer '))
+    for x in range(1,integer + 1):
+        if integer % x == 0: 
+            divide = integer / x
+            lst.append(divide)
+    print(lst)
+divisor()
+
+#3.30
+def average():
+    list = []
+    for x in range(4):
+        x = eval(input('please enter number '))
+        list.append(x)   
+    if sum(list[:3])/3 == list[-1]:
+        print('\nequal')
+    else:
+        print('\nnot equal')
+average()
+
+#3.31
+def dart():
+    import math
+    x = eval(input(' enter number between -10 and 10 '))
+    y = eval(input(' enter another number between -10 and 10 '))
+    c = math.sqrt(x**2 + y**2)
+    if c <= 8:
+        print('it is in!')
+    else:
+        print('better luck next time! ')
+dart()
+
+#3.32
+def integer():
+    integer = eval(input('enter a four digit integer ' ))
+    print(integer // 1000)
+    print(integer // 100 % 10)
+    print(integer // 10 % 10)
+    print(integer % 10)
+integer()
+
+#3.33
+def rev():
+    x = input('input 3 letter string ')
+    print(x[2]+x[1]+x[0])
+rev()
+
+#3.34
+def pay(rate,hours):
+    if hours > 40:
+        print(rate*40 + (hours - 40)*1.5*rate)
+    else:
+        print(rate*hours)
+pay(rate,hours)
+
+#3.35 
+def prob(x):
+    prob = (2**-x)
+    print(prob)
+prob(x)
+
+#3.36
+def rev():
+    rev = eval(input('enter a 3 digit integer ' ))
+    print(rev % 10,rev // 10 % 10,rev // 100)
+rev()
+
+#3.37
+def f(x1,y1,x2,y2):
+    import math
+    slope = (y1 - y2) / (x1 - x2)
+    dist = math.sqrt((x2-x1)**2 + (y2 - y1)**2)
+    if abs(slope) == 1:
+        slope == 'infinity'
+    print(' The slope is ', slope, ' and the distance is ', dist)
+f(x1,y1,x2,y2)
+
+#3.38
+def abbr(x):
+    print(x[:2])
+abbr(x)
+
+#3.39
+def collision(x,y,r,x1,y1,r1):
+    import math
+    dist = math.sqrt((x1-x)**2 + (y1 - y)**2)
+    if dist <= r + r1:
+        print('True')
+    elif dist > r + r1:
+        print('False')
+collision(x,y,r,x1,y1,r1)
+
+#3.40
+def partition(x):
+    x = ['eleanor','evelyn','sammy','owen','gavin']
+    for i in x:
+        if i[0] in ['a','b','c','d','e','f','g','h','i','j','k','l','m']:
+            print(i)
+partition(x)
+
+#3.41
+def lastF(f,l):
+    print(l,',',f[0],'.')
+lastF('albert','camus')
+
+#3.42
+def avg(x):
+    x = [[95,92,86,87],[66,54],[89,72,100],[33,0,0]]
+    for i in range(len(x)):
+        print(sum(x[i]) / len(x[i]))
+avg(x)
+
+#3.43
+def hit(x,y,r,x1,y1):
+    import math
+    dist = math.sqrt((x1-x)**2 + (y1-y)**2)
+    if dist <= r:
+        print('True')
+    else:
+        print('False')
+hit(0,0,3,4,0)
+
+#3.44
+def dist(x):
+    dist = x *.34029
+    print(dist)
+dist(3)
+
+#done!!!!
+
+    
