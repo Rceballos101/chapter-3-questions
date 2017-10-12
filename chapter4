@@ -129,4 +129,53 @@ The 3 lines in this file end with the new line character.
 There is a blank line above this line.
 
 #questions
-   
+#4.13
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5
+
+for i in range(len(s)):
+    print(s[i],end=' ')
+print('\n')
+for j in range(len(t)):
+    print(t[j],end=' ')
+    
+#4.14
+    #b
+def hw():
+    x = log.split()
+    address = x[0]
+    print(address)
+hw()
+#c
+def hw():
+    x = log.split()
+    date = x[3:5]
+    print(date)
+hw()
+
+['[12/Feb/2011:10:31:08', '-0600]']
+
+#4.15
+['10', '20', '30', '40', '50', '60']
+#a 
+def a():
+    x = []
+    for i in range(2,len(s)+1,3):
+        x.append(s[i-2:i])
+    print(x,end=',')
+a()
+#b
+def b():
+    x = []
+    for i in range(2,len(s)+1,3):
+        x.append(s[i-2:i])
+    print(x,end=',')
+b()
+#d
+def d():
+    x = []
+    for i in range(2,len(s)+1,5):
+        x.append(s[i-2:i])
+    print(x,end=',')
+d()
+#4.16
