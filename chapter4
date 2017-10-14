@@ -178,4 +178,92 @@ def d():
         x.append(s[i-2:i])
     print(x,end=',')
 d()
+
 #4.16
+def dictionary(x,y,z):
+    order = x[0], y[0], z[0]
+    abc = sorted(order)
+    return x[0] == abc[0] and y[0] == abc[1] and z[0] == abc[2]
+dictionary('bass','salmon','whitefish')
+
+#4.17
+message = 'The secret of this message is that it is secret.'
+length = len(message)
+count = message.count('secret')
+message.replace('secret','xxxxxx')
+
+#4.18
+s = '''It was the best of times, it was the worst of times; it
+was the age of wisdom, it was the age of foolishness; it was the
+epoch of belief, it was the epoch of incredulity; it was ...'''
+
+replace = str.maketrans(',:\n',3*' ')
+newS = s.translate(replace)
+
+newS.lower()
+newS.count('it was')
+newS = newS.replace('was','is')
+listS = newS.split(' ')
+
+#4.19
+first = 'Marlena'
+last = 'Sigel'
+middle = 'Mae'
+
+print('{2}, {0} {1}'.format(first,middle,last))
+Sigel, Marlena Mae
+
+print('{2}, {0} {1}.'.format(first,middle[0],last))
+Sigel, Marlena M.
+
+print('{0} {1}. {2}'.format(first,middle[0],last))
+Marlena M. Sigel
+
+print('{0}. {1}. {2}'.format(first[0],middle[0],last))
+M. M. Sigel
+
+print('{2}, {0}.'.format(first[0],middle[0],last))
+Sigel, M.
+
+#4.20
+sender = 'tim@abc.com'
+recipient = 'tom@xyz.org'
+subject = 'Hello!'
+
+print('From: ',sender,'\nTo: ',recipient,'\nSubject: ',subject)
+From: tim@abc.com
+To: tom@xyz.org
+Subject: Hello!
+
+#4.21
+import math
+print('{} = {:.1f}, {} = {:.1f}'.format('pi',math.pi,'e',math.e))
+pi = 3.1, e = 2.7
+
+print('{} = {:.2f}, {} = {:.2f}'.format('pi',math.pi,'e',math.e))
+pi = 3.14, e = 2.72
+
+print('{} = {:e}, {} = {:e}'.format('pi',math.pi,'e',math.e))
+pi = 3.141593e+00, e = 2.718282e+00
+
+print('{} = {:.5f}, {} = {:.5f}'.format('pi',math.pi,'e',math.e))
+pi = 3.14159, e = 2.71828
+
+#4.22
+def month(x):
+    month = ('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
+    print(month[x-1])
+month(1)
+
+#4.23
+def average(x):
+    sent = x.split()
+    add = 0
+    for i in range(len(sent)):
+        add += len(sent[i])
+    return add / len(sent)
+average('A simple sentence')
+
+Out[112]: 5.0
+
+#4.24
