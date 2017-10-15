@@ -288,3 +288,102 @@ vowels('Le Tour de France')
 a, e, i, o and u appear, respectively, 1, 3, 0, 1, 1 times.
 
 #4.26
+def crypto(x):
+    infile = open(x,'r')
+    write = infile.read()
+    infile.close()
+    replace = write.replace('xxxxxx','secret')
+
+    infile = open(x,'w')
+    infile.write(replace)
+    infile.close()
+
+    infile = open(x,'r')
+    test = infile.read()
+    print(test)
+    infile.close()
+
+crypto('C:/Users/user/Desktop/st johns/delete.txt')
+
+#4.27
+def fcopy(x,y):
+    infile = open(x,'r')
+    write = infile.read()
+    infile.close()
+    #2nd file
+    infile2 = open(y,'w')
+    infile2.write(write)
+    infile2.close()
+    infile3 = open(y,'r')
+    test = infile3.read()
+    print(test)
+    infile3.close()
+fcopy('C:/Users/user/Desktop/st johns/delete.txt','C:/Users/user/Desktop/st johns/delete2.txt')
+
+#4.28 similar IDK what html is 
+def test(y):
+    infile3 = open(y,'r')
+    count = infile3.read()
+    infile3.close()
+    return count.count('secret')
+test('C:/Users/user/Desktop/st johns/delete2.txt')
+
+#4.29
+def stats(x):
+    infile = open(x,'r')
+    sent = infile.read()
+    infile.close()
+    lines = sent.split('\n')
+    words = sent.split()
+    print('line count: ', len(lines))
+    print('word count: ',len(words))
+    print('character count: ',len(sent))
+stats('C:/Users/user/Desktop/st johns/delete2.txt')
+
+#4.30
+def dist(x):
+    infile = open(x,'r')
+    grades = infile.read()
+    infile.close()
+    letters = grades.split()
+    grade = ['A','A-','B+','B','B-','C','C-','F']
+    for i in grade:
+        num = letters.count(i)
+        print(num,' students got ',i)
+dist('C:/Users/user/Desktop/st johns/grades.txt')
+
+6  students got  A
+2  students got  A-
+3  students got  B+
+2  students got  B
+2  students got  B-
+4  students got  C
+1  students got  C-
+2  students got  F
+
+#4.31
+#not sure, but maybe similar to previous question with
+#A A A A A A A- A- B+ B+ B+ B B B- B- C C C C C- F F
+def dist(x):
+    infile = open(x,'r')
+    grades = infile.read()
+    infile.close()
+    letters = grades.split()
+    for i in letters:
+        num = letters.count(i)
+        return num > 1
+dist('C:/Users/user/Desktop/st johns/grades.txt')
+
+#4.32
+def censor(x,y):
+    infile = open(x,'r')
+    content = infile.read()
+    infile.close()
+    words = content.split()
+    for i in range(len(words)):
+        if len(words[i]) == 4:
+            content = content.replace(words[i],'xxxx')
+    infile = open(y,'w')
+    infile.write(content)
+    infile.close()
+censor('C:/Users/user/Desktop/st johns/delete.txt','C:/Users/user/Desktop/st johns/censor.txt')
