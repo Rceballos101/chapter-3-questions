@@ -46,3 +46,81 @@ def mult(x,y):
 mult([3, 4, 1], [2, 0])
 '''
 #5.8
+lst = [3, 1, 7, 4, 9, 2, 5]
+
+def bubblesort(lst):
+    for i in range(len(lst)-1,):
+        for j in range(i):
+            if lst[j] > lst[j+1]:
+                lst[j],lst[j+1] = lst[j+1],lst[j]
+                print(lst)
+    print(lst)
+bubblesort(lst)
+
+[1, 2, 3, 4, 5, 7, 9]
+
+#notes
+t = [[4, 7, 2, 5], [5, 1, 9, 2], [8, 3, 6, 6]]
+
+nrows = len(t)
+ncols = len(t[0])
+for i in range(nrows):
+    for j in range(ncols):
+        t[i][j] += 1
+for a in t:
+    for b in a:
+        print(b,end=" ")
+    print()
+
+#5.9
+t = [[4, 7, 2, 5], [5, 1, 9, 2], [8, 3, 6, 6]]
+s = [[0, 1, 2, 0], [0, 1, 1, 1], [0, 1, 0, 0]]
+            
+for i in range(len(t)):
+    for j in range(len(t[i])):
+        t[i][j] += s[i][j]
+for i in t:
+        print(i)
+        
+#notes
+mult = 0
+lst = [1]
+while mult <= 3951:
+    mult += 73
+    #print(mult,end=' ') 
+    lst.append(mult)
+print(lst[-2])      
+
+#5.10
+investment = 500
+interest = .07
+years = 0
+while investment < 1000:
+    compound_interest = investment*interest
+    investment += compound_interest
+    years += 1
+print(investment) 
+print(years)       
+
+#notes
+prev = 1
+curr = 1 
+while curr <= 1000:
+    prev, curr = curr, prev+curr
+print(curr)
+
+fib = [1,1]
+while fib[-1] < 1000:
+    add = fib[-1] + fib[-2]
+    fib.append(add)
+print(fib)
+
+#5.11 idk
+#never ends
+lst = []
+city = input('Enter a city ')
+while city != '':
+    lst.append(city)
+    city = input('Enter a city ')
+
+print(lst)
