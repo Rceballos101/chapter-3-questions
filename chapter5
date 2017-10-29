@@ -6,3 +6,43 @@ def arith(x):
             return False
     return True
 arith([3, 6, 9, 12, 15])
+
+#5.4
+'''
+def factorial(x):
+    fact = 1
+    for i in range(x,1,-1):
+        fact *= i
+    print(fact)
+factorial(5)
+
+#5.5
+def acronym():
+    acro = 'Random access memory'
+    acro = acro.split(' ')
+    acronym = ''
+    for i in acro:
+        acronym = acronym + i[0]
+    print(acronym.upper())
+acronym()
+
+#5.6
+def divisors(x):
+    divi = []
+    for i in range(1,x+1):
+        if x % i == 0:
+            divi.append(i)
+    print(divi)
+divisors(11)
+
+#5.7
+def mult(x,y):
+    mult = []
+    for i in x:
+        for j in y:
+            m = i * j
+            mult.append(m)
+    print(mult)
+mult([3, 4, 1], [2, 0])
+'''
+#5.8
