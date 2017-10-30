@@ -124,3 +124,12 @@ while city != '':
     city = input('Enter a city ')
 
 print(lst)
+#5.12
+def test(x):
+    if x < 0:
+        print('Negative')
+    elif x > 0:
+        print('Positive')
+    else:
+        print('Zero')
+test(3)
