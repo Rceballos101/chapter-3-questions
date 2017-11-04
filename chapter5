@@ -205,3 +205,63 @@ def pay(wage,hours):
     elif hours > 60:
         print('$',40 * wage + 20*1.5*wage + (hours - 60) * 2*wage )
 pay(10,61)
+'''#2.24
+case = 'android'
+if case[0] == case[0].upper():
+    print('capitalized')
+elif case[0] == case[0].lower():
+    print('not capitalized')
+else:
+    print('unknown')
+
+#2.25
+leap = 1700
+if leap % 4 == 0 and (leap % 100 != 0 or leap % 400 == 0):
+    print('leap year')
+else:
+    print('not leap year')
+    
+#2.26
+print(' Rock, paper, scissors say shoot ')
+player1 = input('Player 1, please enter your selection ')
+player2 = input('Player 2, please enter your selection ')
+
+if player1 == player2:
+    print('its a tie')
+    
+elif player1 == 'rock': 
+    if player2 == 'paper':
+        print('player2 wins')
+    else:
+        print('player1 wins')
+        
+elif player1 == 'paper': 
+    if player2 == 'scissors':
+        print('player2 wins')
+    else: 
+        print('player1 wins')
+        
+elif player1 == 'scissors': 
+    if player2 == 'rock':
+        print('player2 wins')
+    else: 
+        print('player1 wins')
+
+else:
+    print('learn to play the game bozo ')
+
+#2.27
+letter = ('ABCDF')
+grade = (4, 3, 2, 1, 0)
+
+GPA = 'F'
+x = letter.find(GPA[0])
+if len(GPA) > 1:
+    if GPA[1] == '-':
+        print(grade[x] -.3)
+    elif GPA[1] == '+':
+        print(grade[x] + .3)
+else:
+    print(grade[x])
+'''
+#2.28
