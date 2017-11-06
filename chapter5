@@ -286,3 +286,92 @@ def lastfirst(names):
     print(ans)
 #lastfirst(['Gerber, Len', 'Fox, Kate', 'Dunn, Bob'])
 
+'''
+#5.30
+#need test file
+
+#5.31
+def subsetSum(set,target):
+    ans = 'nope'
+
+    for i in range(len(set)):
+        for j in range(1,len(set)):
+            for k in range(2,len(set)):
+                if ans == 'nope':
+                    if set[i] + set[j] + set[k] == target:
+                        print('True',set[i],set[j],set[k])
+                        ans = 'found'
+
+#subsetSum([5, 4, 10, 20, 15, 19],38)
+#subsetSum([5, 4, 10, 20, 15, 19], 10)
+#idk
+
+#5.32
+def fib(num):
+    fib = [1,1]
+    for i in range(2,num):
+        new = fib[-1] + fib[-2]
+        fib.append(new)
+    print(fib[-1])
+#fib(0)
+#fib(4)
+#fib(8)
+
+#5.33
+def mystery(num):
+    div = [num]
+    count = 0
+    while div[-1] != 1:
+        div.append(div[-1] // 2)
+        count += 1
+    print(count)
+#mystery(4)
+#mystery(11)
+#mystery(25)
+
+#5.34
+def statement(transaction):
+    deposits = []
+    withdrawals = []
+    for i in transaction:
+        if i > 0:
+            deposits.append(i)
+        else:
+            withdrawals.append(i)
+    print('{},{}'.format(sum(deposits),sum(withdrawals)))
+statement([30.95, -15.67, 45.56, -55.00, 43.78])
+
+#5.35
+def pixels(l):
+    count = 0
+    for i in l:
+        for j in i:
+            if j > 0:
+                count += 1
+    print(count)
+pixels([[0, 156, 0, 0], [34, 0, 0, 0], [23, 123, 0, 34]])
+pixels([[123, 56, 255], [34, 0, 0], [23, 123, 0], [3, 0, 0]])
+
+#5.36
+#prime can't be divided by #'s other than 2 or itself
+def prime(n):
+    p = 0
+    if n == 2:
+        print(True)
+    else:
+        while p == 0:
+            for i in range(2,n):
+                if n % i == 0:#not prime
+                    p += 1
+                    print(False)
+                    break
+            if p == 0:
+                print(True)
+                p += 1
+
+
+prime(2)
+prime(17)#prime
+prime(21)#not prime
+'''
+
