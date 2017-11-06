@@ -374,4 +374,27 @@ prime(2)
 prime(17)#prime
 prime(21)#not prime
 '''
+#5.37
+def mssl(lst):
+    curr = best = 0
+    for x in lst:
+        curr = max(curr + x,0)     
+        best = max(best,curr)
+    print(best)
+        
+mssl([4, -2, -8, 5, -2, 7, 7, 2, -6, 5])
+#mssl([3,4,5])
+#mssl([-2,-3,-5])
+'''
+#5.38
+def collatz(num):
+    collatz = num
+    
+    while collatz != 1:
+        print(collatz)        
+        if collatz % 2 == 0:#even
+            collatz = collatz / 2
+        elif collatz % 2 != 0:#odd
+            collatz = collatz * 3 + 1
 
+collatz(10)
