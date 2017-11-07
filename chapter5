@@ -398,3 +398,17 @@ def collatz(num):
             collatz = collatz * 3 + 1
 
 collatz(10)
+#5.39
+def exclamation(excite):
+    excite = excite.replace(excite,excite+'!')
+    vowels = ('aeiou')
+    new = []
+    for x in excite:
+        new.append(x)
+        for i in vowels:
+            if x == i:
+                new.append(x*3)
+    new = ''.join(new)
+    print(new)
+exclamation('argh')
+exclamation('hello')
