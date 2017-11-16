@@ -449,3 +449,15 @@ def avgavg(x):
     print(grades)
     print(sum(grades)/len(grades))
 avgavg([[95, 92, 86], [66, 75, 54],[89, 72, 100], [34, 0, 0]])
+
+#5.46
+def inversions(x):
+    count = 0
+    for i in range(len(x)):
+        for j in range(i+1,len(x)):
+            if x[i] > x[j]:
+                count += 1
+    print(count)
+inversions('ABBFHDL')
+inversions('ABCD')
+inversions('DCBA')
