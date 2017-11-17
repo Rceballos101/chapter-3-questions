@@ -461,3 +461,30 @@ def inversions(x):
 inversions('ABBFHDL')
 inversions('ABCD')
 inversions('DCBA')
+#5.47
+
+#5.48
+def sublist(lst1,lst2):
+    test = []
+    for i in lst2:
+        for j in lst1:
+            if i == j:
+                test.append(i)
+    print(test)            
+    print(test == lst1)
+    
+sublist([15, 1, 100], [20, 15, 30, 50, 1, 100])
+sublist([15, 50, 20], [20, 15, 30, 50, 1, 100])
+
+#5.49
+def heron(n,error):
+    
+    import math
+    ans = math.sqrt(n)
+    prev = 1
+    while abs(prev - ans) > error:
+        prev = .5*(prev + n/prev)
+    print(prev)
+    
+heron(4.0, 0.5)
+heron(4.0, 0.1)
