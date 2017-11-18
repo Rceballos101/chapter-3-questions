@@ -42,3 +42,50 @@ print('\n')
 for count, item in enumerate(grocery): 
     print(count, item)
 
+
+fam = {1:'rey',2:'alb',3:'sal',4:'reina'}
+fam[5] = 'mom'
+print(fam)
+
+#6.1
+def birthState(name):
+    
+    pres = {'Barack Hussein Obama II':'Hawaii',
+            'George Walker Bush':'Connecticut',
+            'William Jefferson Clinton':'Arkansas',
+            'George Herbert Walker Bush':'Massachussetts',
+            'Ronald Wilson Reagan':'Illinois',
+            'James Earl Carter, Jr':'Georgia'}
+
+    print(pres[name])
+
+birthState('Ronald Wilson Reagan')
+
+#6.2
+def rlookup(phone):
+
+    rphonebook = {'(123)456-78-90':['Anna','Karenina'],
+                  '(901)234-56-78':['Yu', 'Tsun'],
+                  '(321)908-76-54':['Hans', 'Castorp']}
+    if phone in rphonebook:
+        print(rphonebook[phone])
+    else:
+        print('The number you entered is not in use.')
+
+rlookup('(123)456-78-90')
+rlookup('(453)454-55-00')
+
+#6.3
+def freq(student):
+    
+    count = {}
+    for name in student:
+        if name in count:
+            count[name] += 1
+        else:
+            count[name] = 1
+    
+    print(count)
+        
+freq(['Cindy', 'John', 'Cindy', 'Adam', 'Adam',
+      'Jimmy', 'Joan', 'Cindy', 'Joan'])
