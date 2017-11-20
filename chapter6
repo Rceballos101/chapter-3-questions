@@ -89,3 +89,141 @@ def freq(student):
         
 freq(['Cindy', 'John', 'Cindy', 'Adam', 'Adam',
       'Jimmy', 'Joan', 'Cindy', 'Joan'])
+      
+#6.4
+def wordcount(phrase):
+    count = {}
+    phrase = phrase.split()
+    for i in phrase:
+        if i in count:
+            count[i] += 1
+        else:
+            count[i] = 1
+            
+    print(count)
+    
+wordcount('all animals are equal but some \ animals are more equal than others')
+
+#6.5
+def lookup():
+    phonebook = {('Anna','Karenina'):'(123)456-78-90',
+                 ('Yu', 'Tsun'):'(901)234-56-78',
+                 ('Hans', 'Castorp'):'(321)908-76-54'}
+        key1 = input('Enter first name: ')
+        key2 = input('Enter last name: ')
+    
+    print(phonebook[key1,key2])
+
+lookup()
+
+#6.7
+def encoding(x):
+    print('Char Decimal Hex Binary')
+    for i in x:
+        code = ord(i)
+        
+        print(' {} {:5} {:5x} {:7b}'.format(x,code,code,code))
+        
+
+encoding('dad')
+
+#6.8
+def char(low,high):
+    for i in range(low,high+1):
+        print('{} : {}'.format(i,chr(i)))
+    
+char(62,67)
+
+#6.9
+def guesss(x):
+    import random
+    ans = random.randrange(x)
+    print(ans)
+
+    guess = eval(input('Enter your guess '))
+    
+    while guess != ans:
+
+        if guess > ans:
+            print('Too high')
+        elif guess < ans:
+            print('Too low')
+            
+        guess = eval(input('Enter your guess '))
+        
+    print('You got it!')
+    
+guesss(100)
+
+#6.10
+def approxPi(n):
+    import random
+
+    k = 0
+    for i in range(n):
+        x = random.uniform(-1,1)
+        y = random.uniform(-1,1)
+        if x**2 + y**2 <= 1:
+            k += 1
+    print(4*k/n)
+    
+approxPi(100000)
+
+#6.11
+def easyCrypto(x):
+    alpha = '0abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    for i in x:
+        ind = alpha.find(i)#index
+        if ind % 2 != 0:
+            print(alpha[ind+1],end='')#if odd
+        else:
+            print(alpha[ind-1],end='')#if even
+    print()
+    
+easyCrypto('abc')
+easyCrypto('ZOO')
+
+#6.12
+def letter2number(grade):
+    gpa = {'A':4.0,'B':3.0,'C':2.0,'D':1.0,'F':0}
+    if len(grade) == 1:
+        print(gpa[grade[0]])
+    else:
+        if grade[1] =='+':
+            print(gpa[grade[0]]+.3)
+        elif grade[1] == '-':
+            print(gpa[grade[0]]-.3)
+    
+letter2number('A-')
+letter2number('B+')
+letter2number('D')
+
+#6.13 adn 6.14
+ 
+agencies = {'CCC':'Civilian Conservation Corps','FCC':'Federal Communications Commission','FDIC':'Federal Deposit Insurance Corporation','SSB':'Social Security Board','WPA':'Works Progress Administration'}
+
+name = agencies.keys()
+for i in name:
+    print(agencies[i])
+
+agencies['SEC'] = 'Securities and Exchange Commission'
+agencies['SSB'] = 'Social Security Administration'
+agencies.pop('CCC')
+agencies.pop('WPA')
+print('\n',agencies,'\n')
+
+for i in name:
+    print(agencies[i])
+
+#6.15
+def lookup():
+    phonebook = {('Anna','Karenina'):['(123)456-78-90'],
+                 ('Yu', 'Tsun'):['(901)234-56-78'],
+                 ('Hans', 'Castorp'):['(321)908-76-54']}
+    key1 = input('Enter first name: ')
+    key2 = input('Enter last name: ')
+    
+    print(phonebook[key1,key2])
+
+lookup()
+
