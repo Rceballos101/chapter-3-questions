@@ -215,9 +215,10 @@ print('\n',agencies,'\n')
 for i in name:
     print(agencies[i])
 
+'''
 #6.15
 def lookup():
-    phonebook = {('Anna','Karenina'):['(123)456-78-90'],
+    phonebook = {('Anna','Karenina'):['(123)456-78-90','(516)-869-2944'],
                  ('Yu', 'Tsun'):['(901)234-56-78'],
                  ('Hans', 'Castorp'):['(321)908-76-54']}
     key1 = input('Enter first name: ')
@@ -226,4 +227,32 @@ def lookup():
     print(phonebook[key1,key2])
 
 lookup()
+
+#6.16
+def hw():
+    mult3 = set()
+    mult5 = set()
+    mult7 = set()
+    
+    count = 0
+    
+    for i in range(3,100,3):
+        mult3.add(i)
+        
+    for i in range(5,100,5):
+        mult5.add(i)  
+        
+    for i in range(7,100,7):
+        mult7.add(i)
+
+    print('Multiples of 35 are ',mult5 & mult7)
+    print('Multiples of 105 are',mult3 & mult5 & mult7)
+    print('Multiples of 3 or 7 are ',mult3 | mult7)
+    print('Multiples of 3 or 7, but not both are ', mult3 ^ mult7)
+    print('Multiples of 7 that are not multiples of 3 are ',mult7 - mult3)
+
+hw()
+'''
+#6.17
+
 
