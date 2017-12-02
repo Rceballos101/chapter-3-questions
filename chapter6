@@ -439,3 +439,79 @@ networks(5, [(0, 1), (1, 2), (3, 4)])
 #not sure
 '''
 #6.30
+'''
+def rockPaperScissors(n):
+    score = []
+    for i in range(n):
+        
+        print('\nRock, paper, scissors say shoot ')
+        player1 = input('Player 1, please enter your selection ')
+        player2 = input('Player 2, please enter your selection ')
+    
+        
+        if player1 == player2:
+            pass
+            
+        elif player1 == 'rock': 
+            if player2 == 'paper':
+                score.append(2)
+                #print('player2 wins')
+            else:
+                score.append(1)
+                #print('player1 wins')
+                
+        elif player1 == 'paper': 
+            if player2 == 'scissors':
+                score.append(2)
+                #print('player2 wins')
+            else: 
+                score.append(1)
+                #print('player1 wins')
+                
+        elif player1 == 'scissors': 
+            if player2 == 'rock':
+                score.append(2)
+                #print('player2 wins')
+            else: 
+                score.append(1)
+                #print('player1 wins')
+        
+        else:
+            print('learn to play the game bozo ')
+                
+        #return score
+    if score.count(1) > score.count(2):
+        print('Player 1 wins! ')
+    elif score.count(2) > score.count(1):
+        print('Player 2 wins! ')
+    else:
+        print('It is a tie! ')
+    #print(score)#winner of each round
+
+rockPaperScissors(2)
+
+#6.31
+def craps(n):
+    import random
+    wins = 0
+    for i in range(n):
+        roll = 'roll again' 
+        while roll == 'roll again':
+            die1 = random.randrange(1,7)
+            die2 = random.randrange(1,7)
+            total = die1 + die2
+            if total in [7,11]:
+                print('you win! ')
+                wins += 1
+                roll = ''
+            elif total in [2,3,12]:
+                print('you lose! ')
+                roll = ''
+            else:
+                #print('roll again')
+                roll = 'roll again'
+        
+    print(wins/n)#test purposes only
+craps(10)
+'''
+#6.32
