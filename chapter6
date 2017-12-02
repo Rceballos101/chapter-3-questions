@@ -307,6 +307,7 @@ def reverse():
 reverse()
 '''
 #6.21
+
 #6.22
 def mirror(word):
     
@@ -324,4 +325,72 @@ mirror('vow')
 mirror('wood')
 mirror('bed')
 
+#6.23
+def scary():
 
+    frank = open('U:/Python/frankenstein.txt','r')
+    story = frank.readlines()
+    frank.close()#opens text file and puts it in variable story
+       
+    dict = open('U:/Python/dictionary.txt','w')#file we will write into
+    dictionary = set()#to eliminate duplicates
+    
+    for i in story:#eliminate punctuation and \n
+        punct = i.maketrans('.;,?-:',' '*6)
+        line = i.translate(punct)
+        line = line.strip()        
+        line = line.split(' ')#convert string into list of words
+        for j in line:
+            if len(j) > 2:
+                dictionary.add(j)
+    dictionary = list(dictionary)#convert set into list
+    dictionary.sort()#alphabetize
+    
+    for k in dictionary:#puts list into text file
+        dict.write(k)
+        dict.write('\n')
+
+    dict.close()
+    #print(dictionary)#testing only
+scary()
+
+#6.24
+def names():
+    student = input('Enter a student name ')
+    Class = []
+        
+    while student != '':
+        Class.append(student)
+        student = input('Enter a student name ')
+    
+    dupl = set(Class)    
+    for i in dupl:
+        if Class.count(i) == 1:
+            print('There is {} student named {}'.format(Class.count(i),i))
+        else:
+            print('There are {} students named {}'.format(Class.count(i),i))
+
+names()
+
+#6.25
+def different(table):
+    entries = set()
+    for i in table:
+        for j in i:
+            entries.add(j)
+    print(len(entries))
+    
+different([[1,0,1],[0,1,0]])
+different([[32,12,52,63],[32,64,67,52],[64,64,17,34],[34,17,76,98]])
+
+#6.26
+def week():
+    abbr = {'Mo':'Monday','Tu':'Tuesday','We':'Wednesday','Th':'Thursday','Fr':'Friday','Sa':'Saturday','Su':'Sunday'}
+
+    day = input('Enter day abbreviation ')
+
+    while day != '':
+        print(abbr[day])
+        day = input('Enter day abbreviation ')          
+week()
+'''
