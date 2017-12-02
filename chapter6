@@ -394,3 +394,48 @@ def week():
         day = input('Enter day abbreviation ')          
 week()
 '''
+'''
+#6.27
+def index(text,words):
+    raven = open(text,'r')
+    story = raven.readlines()
+    raven.close()
+    num = []
+    
+    for i in words:
+        #print(i)
+        count = []
+        num.append(count)
+        for j in range(len(story)):# j is line
+            if i in story[j]:
+                count.append(j)
+                #print(j,end=',')
+    
+    for k in range(len(words)):
+        print('\n',words[k])
+        for l in num[k]:
+            print(l,end=',')
+        
+index('U:/Python/Raven.txt', ['Raven', 'mortal', 'dying', 'ghost','ghastly', 'evil','demon'])
+
+#6.28 ?
+#6.29
+def networks(num,friends):
+    students = set()
+    for i in friends:
+        for j in i:
+            students.add(j)
+           
+    for i in students:
+        network = set()
+        for j in friends:
+            if i in j:
+                network.add(j[0])
+                network.add(j[1])
+        print(network)
+
+    #print(students)
+networks(5, [(0, 1), (1, 2), (3, 4)])
+#not sure
+'''
+#6.30
