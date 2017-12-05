@@ -514,4 +514,70 @@ def craps(n):
     print(wins/n)#test purposes only
 craps(10)
 '''
+'''
 #6.32
+#6.33
+def diceprob(x):
+    
+    import random
+    die1 = random.randrange(1,7)
+    die2 = random.randrange(1,7)
+    count = 0
+    roll = 0
+    
+    while count != 100:
+        die1 = random.randrange(1,7)
+        die2 = random.randrange(1,7)
+        total = die1 + die2
+        roll += 1
+        
+        if total == x:
+            count += 1
+    print('It took {} rolls to get 100 rolls of {} '.format(roll,x))
+    
+    
+diceprob(2)
+diceprob(3)
+diceprob(4)
+diceprob(5)
+diceprob(6)
+diceprob(7)
+'''
+#6.34
+def war():
+    import random
+    deck = [2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    random.shuffle(deck)    
+    player1 = []
+    player2 = []
+    
+    for i in range(0,len(deck),2):#split deck
+        player1.append(deck[i])
+        player2.append(deck[i+1])
+        
+    while len(player1) > 5:
+        card1 = player1[0]
+        card2 = player2[0]
+
+        if card1 == card2:#war
+            player2.remove(card2)
+            player1.remove(card1)            
+        elif card1 > card2: #1 wins
+            player1.append(card1)
+            player1.append(card2)
+            player2.remove(card2)
+            player1.remove(card1)
+        elif card1 < card2: #2 wins
+            player2.append(card1)
+            player2.append(card2)
+            player2.remove(card2)
+            player1.remove(card1)
+
+    
+    #cards = player1 + player2
+    #cards.sort()
+    print(player1)
+    print(player2)
+
+    
+war()
