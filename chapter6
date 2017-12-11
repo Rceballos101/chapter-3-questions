@@ -644,4 +644,59 @@ def war():
     
     
 war()
+'''
+#6.35
+def add(n):
+    import random
+    correct = 0
+    
+    for i in range(n):
+        a = random.randrange(0,10)
+        b = random.randrange(0,10)
+        answer = eval(input('{} + {} = '.format(a,b)))
+        if answer == a + b:
+            print('Correct')
+            correct += 1
+        else:
+            print('Incorrect')
+    
+    print('\nYou got {} correct answers out of {}'.format(correct,n))
+    
+add(3)
+
+#6.36
+
+def caesar(key,text):
+    alpha = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    cipher = ''
+    
+    for i in text:
+        if i != ' ':
+            index = alpha.find(i)
+            cipher += alpha[index+key]
+        else:
+            cipher += ' '
+    
+    print(cipher)
+        
+    
+caesar(2,'Abc def Ghi')
+'''
+#6.37
+def zipf(text):
+    words = {}
+    
+    text = text.split()
+    for i in text:
+        if i not in words:
+            words[i] = 1
+        else:
+            words[i] = words[i]+1
+            
+    for i in words:
+        print(words[i]/len(text))
+    
+    
+zipf('hi my name is edward snowden and this class is very time consuming as it requires a lot of practice')
+
 
