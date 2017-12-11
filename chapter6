@@ -544,40 +544,104 @@ diceprob(6)
 diceprob(7)
 '''
 #6.34
-def war():
-    import random
-    deck = [2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-    random.shuffle(deck)    
-    player1 = []
-    player2 = []
-    
+import random
+deck = 2*[2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+random.shuffle(deck)    
+player1 = []
+player2 = []
+
+def split_deck():
     for i in range(0,len(deck),2):#split deck
         player1.append(deck[i])
         player2.append(deck[i+1])
+    
+def shuffle():
+    random.shuffle(player1)
+    random.shuffle(player2)
+    
+
+def play():
+    warCount = 0
+    battleCount = 0
+    player1_Score = 0
+    player2_Score = 0
+    doubleWar = 0
         
-    while len(player1) > 5:
+    while len(player1) > 0 and len(player2) > 0:#until a player runs out of cards
         card1 = player1[0]
         card2 = player2[0]
-
+        #see who wins battle
         if card1 == card2:#war
-            player2.remove(card2)
-            player1.remove(card1)            
+            print('This is War!!!')
+            warCount += 1
+            #choose cards
+            if len(player1) >= 4:#checks to see if player has sufficient cards for war
+                card1 = max(player1[1],player1[2],player1[3])#takes highest of next 3 cards
+            else:
+                card1 = max(player1)#if player doesnt have 3 cards, takes highest card
+            if len(player2) >= 4:
+                card2 = max(player2[1],player2[2],player2[3])
+            else:
+                card2 = max(player2)
+            #see who wins war        
+            if card1 == card2:#double war
+                print('Double War!!!')
+                doubleWar += 1
+                #avoids having to go to double and triple wars
+                #declares a tie and splits the points
+                player1_Score += .5
+                player2_Score += .5
+            elif card1 > card2: #1 wins
+                if len(player2) > 3:
+                    #gives all cards to winner
+                    player1.extend([player2[1],player2[2],player2[3]])
+                    player2[0:4] = []#removes cards from loser
+                    player1_Score += 1
+                else:
+                    player1_Score += 1
+                    break#player1 took all of player2's cards
+                    
+    
+            elif card1 < card2: #2 wins
+                if len(player1) > 3:
+                    player2.extend([player1[1],player1[2],player1[3]])
+                    player1[0:4] = []
+                    player2_Score += 1
+                else:
+                    player2_Score += 1
+                    break#player2 took all the cards
+                
+            print('war cards ',card1, card2)
+                                        
         elif card1 > card2: #1 wins
-            player1.append(card1)
+            #gives both cards to winner
             player1.append(card2)
-            player2.remove(card2)
-            player1.remove(card1)
+            player2.remove(card2)#removes cards from loser
+            player1_Score += 1
+
         elif card1 < card2: #2 wins
             player2.append(card1)
-            player2.append(card2)
-            player2.remove(card2)
             player1.remove(card1)
-
+            player2_Score += 1
+            
+        battleCount += 1
+        print('Player 1 card {:2}  Player 2 card {:2}'.format(card1,card2))
+            
+        shuffle()
     
-    #cards = player1 + player2
-    #cards.sort()
-    print(player1)
-    print(player2)
-
+    print('='*60)
+    print('\nBattles ',battleCount)
+    print('Wars ',warCount)
+    print('Double Wars ',doubleWar)
+    print('Player 1 score ',player1_Score)
+    print('Player 2 score ',player2_Score)
+    
+def war():
+    
+    split_deck()
+    shuffle()
+    play()
+    
     
 war()
+
